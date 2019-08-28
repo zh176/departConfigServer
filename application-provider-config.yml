@@ -1,0 +1,68 @@
+# 配置dev环境
+server:
+  port: 8084
+
+spring:
+  profiles: dev
+  # 指定当前微服务对外暴露的名称
+  application:
+    name: abcmsc-provider-depart
+
+  # 配置spring-data-jpa
+  jpa:
+    # 指定是否在Spring容器启动时创建表，默认为false
+    generate-ddl: true
+    # 指定是否在控制台显示SQL语句，默认为false
+    show-sql: true
+    # 指定应用重启时不重新更新表
+    hibernate:
+      ddl-auto: none
+
+  # 配置数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///test02?useUnicode=true&amp;characterEncoding=utf8
+    username: root
+    password: 111
+
+eureka:
+  # 指定eureka服务中心
+  client:
+    service-url:
+      defaultZone: http://eureka8400.com:8400/eureka
+
+---
+# 配置test环境
+server:
+  port: 8085
+
+spring:
+  profiles: test
+  # 指定当前微服务对外暴露的名称
+  application:
+    name: abcmsc-provider-depart
+
+  # 配置spring-data-jpa
+  jpa:
+    # 指定是否在Spring容器启动时创建表，默认为false
+    generate-ddl: true
+    # 指定是否在控制台显示SQL语句，默认为false
+    show-sql: true
+    # 指定应用重启时不重新更新表
+    hibernate:
+      ddl-auto: none
+
+  # 配置数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///test03?useUnicode=true&amp;characterEncoding=utf8
+    username: root
+    password: 111
+
+eureka:
+  # 指定eureka服务中心
+  client:
+    service-url:
+      defaultZone: http://eureka8500.com:8500/eureka

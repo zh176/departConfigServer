@@ -1,0 +1,36 @@
+# 配置dev环境
+spring:
+  profiles: dev
+  application:
+    name: abcms-eurekaServer-config
+
+server:
+  port: 8400
+
+eureka:
+  instance:
+    hostname: eureka8400.com      # 指定Eureka主机
+  client:
+    register-with-eureka: false   # 指定是否向注册中心注册自己
+    fetch-registry: false   # 指定此客户端是否能够获取eureka注册信息
+    service-url:    # 暴露服务中心地址
+      defaultZone: http://eureka8400.com:8400/eureka
+
+---
+# 配置test环境
+spring:
+  profiles: test
+  application:
+    name: abcms-eurekaServer-config
+
+server:
+  port: 8500
+
+eureka:
+  instance:
+    hostname: eureka8500.com      # 指定Eureka主机
+  client:
+    register-with-eureka: false   # 指定是否向注册中心注册自己
+    fetch-registry: false   # 指定此客户端是否能够获取eureka注册信息
+    service-url:    # 暴露服务中心地址
+      defaultZone: http://eureka8500.com:8500/eureka
