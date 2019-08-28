@@ -7,11 +7,13 @@ spring:
 spring:
   application:
     name: abcmsc-config-dev
-    profiles: dev
+  profiles: dev
 
 ---
+
 # 测试环境 spring:
-application:
-  name: abcmsc-config-test
-  profiles: test
+spring:
+    application:
+      name: abcmsc-config-test
+    profiles: test
 
